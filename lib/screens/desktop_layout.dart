@@ -3,8 +3,9 @@ import 'package:siaga_langit_0502/widgets/header.dart';
 import 'package:siaga_langit_0502/widgets/upcoming.dart';
 import 'package:siaga_langit_0502/widgets/weather_box.dart';
 
-class MobileLayout extends StatelessWidget {
-  const MobileLayout({super.key});
+class DesktopLayout extends StatelessWidget {
+  final double childRatio;
+  const DesktopLayout({super.key, required this.childRatio});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +14,19 @@ class MobileLayout extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(24),
           child: Column(
-            spacing: 20,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 30,
             children: [
               Header(),
-              Upcoming(alignment: MainAxisAlignment.spaceBetween, gap: 0),
+              Upcoming(alignment: MainAxisAlignment.start, gap: 20),
               Divider(),
               Expanded(
-                child: ListView(
+                child: GridView.count(
+                  padding: EdgeInsets.zero,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: childRatio,
                   children: [
                     WeatherBox(
                       city: 'Kota Depok, Jawa Barat',
@@ -28,7 +35,6 @@ class MobileLayout extends StatelessWidget {
                       icon: 'weather_icon.svg',
                       weather: 'Cloudy',
                     ),
-                    SizedBox(height: 10),
                     WeatherBox(
                       city: 'Bandung, Jawa Barat',
                       temp: '24',
@@ -36,7 +42,6 @@ class MobileLayout extends StatelessWidget {
                       icon: 'rain_icon.svg',
                       weather: 'Rain',
                     ),
-                    SizedBox(height: 10),
                     WeatherBox(
                       city: 'Denpasar, Bali',
                       temp: '28',
@@ -44,7 +49,6 @@ class MobileLayout extends StatelessWidget {
                       icon: 'lightning_icon.svg',
                       weather: 'Thunderstorm',
                     ),
-                    SizedBox(height: 10),
                     WeatherBox(
                       city: 'Jakarta',
                       temp: '12',

@@ -5,7 +5,9 @@ const String iconsPath = '../../assets/icons/';
 const double iconsSize = 38;
 
 class Upcoming extends StatelessWidget {
-  const Upcoming({super.key});
+  final MainAxisAlignment alignment;
+  final double gap;
+  const Upcoming({super.key, required this.alignment, required this.gap});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,10 @@ class Upcoming extends StatelessWidget {
       spacing: 10,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Opacity(opacity: 0.7, child: Text("Lokasi Anda: Tangerang")),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          spacing: gap,
+          mainAxisAlignment: alignment,
           children: [
             upcomingRowCard(
               icon: "lightning_icon.svg",
@@ -27,14 +31,9 @@ class Upcoming extends StatelessWidget {
               time: "14:00",
             ),
             upcomingRowCard(
-              icon: "rain_icon.svg",
-              weather: "Rain",
-              time: "15:00",
-            ),
-            upcomingRowCard(
               icon: "weather_icon.svg",
               weather: "Cloudy",
-              time: "16:00",
+              time: "15:00",
             ),
           ],
         ),

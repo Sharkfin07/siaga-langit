@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 const double weatherIconSize = 110;
 const String iconPath = "../../assets/icons/";
 
+// ignore: must_be_immutable
 class WeatherBox extends StatelessWidget {
   late String city, temp, weather, icon, time;
   WeatherBox({
@@ -23,6 +24,7 @@ class WeatherBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: const Color.fromARGB(255, 31, 126, 204),
       ),
+      // height: 300,
       child: Column(
         spacing: 10,
         children: [

@@ -30,8 +30,8 @@ class Header extends StatelessWidget {
         IconButton(
           onPressed: null,
           icon: SvgPicture.asset(
-            width: 36,
-            height: 36,
+            width: 32,
+            height: 32,
             settingsIconPath,
             colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
