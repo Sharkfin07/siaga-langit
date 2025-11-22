@@ -6,7 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 final String settingsIconPath = '../../assets/icons/settings_icon.svg';
 
 class Header extends StatelessWidget {
-  const Header({super.key});
+  final String subtitle;
+  const Header({super.key, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,7 @@ class Header extends StatelessWidget {
               "15 November 2025",
               style: Theme.of(context).textTheme.headlineLarge,
             ),
-            Text(
-              "Apa kabar, Indonesia?",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Text(subtitle, style: Theme.of(context).textTheme.headlineMedium),
           ],
         ),
         IconButton(

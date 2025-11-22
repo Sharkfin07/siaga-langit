@@ -35,6 +35,11 @@ class Upcoming extends StatelessWidget {
               weather: "Cloudy",
               time: "15:00",
             ),
+            upcomingRowCard(
+              icon: "rain_icon.svg",
+              weather: "Rain",
+              time: "16:00",
+            ),
           ],
         ),
       ],
